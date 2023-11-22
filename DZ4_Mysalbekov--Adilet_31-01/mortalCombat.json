@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Scorpion",
+    "age": 32,
+    "avatar": "https://www.gameskinny.com/wp-content/uploads/2023/07/mortal-kombat-11-tier-list-all-characters-ranked.jpg",
+    "icon": "https://example.com/scorpion_icon.png"
+  },
+  {
+    "name": "Sub-Zero",
+    "age": 34,
+    "avatar": "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2020/05/mk11-sub-zero-ice-attack.jpg",
+    "icon": "https://example.com/subzero_icon.png"
+  },
+  {
+    "name": "Sonya Blade",
+    "age": 29,
+    "avatar": "https://files.vgtimes.ru/posts/2022-05/1653902607_1.jpg",
+    "icon": "https://example.com/sonya_icon.png"
+  },
+  {
+    "name": "Liu Kang",
+    "age": 28,
+    "avatar": "https://miro.medium.com/v2/resize:fit:1400/1*wFN3KHbvDt65Essrg9PJzg.png",
+    "icon": "https://example.com/liukang_icon.png"
+  },
+  {
+    "name": "Raiden",
+    "age": 1000,
+    "avatar": "https://rare-gallery.com/uploads/posts/1124269-video-games-machine-Raiden-Mortal-Kombat-X-screenshot-action-figure.jpg",
+    "icon": "https://example.com/raiden_icon.png"
+  },
+  {
+    "name": "Mileena",
+    "age": 25,
+    "avatar": "https://i.blogs.es/0527de/40cc1757-82a5-4cb9-9aa5-d61647a26f6e/840_560.jpeg",
+    "icon": "https://example.com/mileena_icon.png"
+  }
+]
