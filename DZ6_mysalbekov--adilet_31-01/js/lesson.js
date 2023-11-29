@@ -106,7 +106,7 @@ const createCardElement = (data) => {
     return div;
 };
 
-const fetchData = () => {
+const updateCard = () => {
     fetch(`https://jsonplaceholder.typicode.com/todos/${count}`)
         .then(response => response.json())
         .then(data => {
@@ -117,14 +117,18 @@ const fetchData = () => {
         .catch(error => console.error(error));
 };
 
-fetchData();
+updateCard();
 
 btnNext.onclick = () => {
-    count++;
-    fetchData();
+    count = count < 100 ? count + 1 : 1;
+    updateCard();
 };
 
-btnPrev.onclick = () => (count > 1 ? (count--, fetchData()) : null);
+btnPrev.onclick = () => {
+    count = count > 1 ? count - 1 : 100;
+    updateCard();
+};
+
 
 //запрос
 fetch('https://jsonplaceholder.typicode.com/posts')
