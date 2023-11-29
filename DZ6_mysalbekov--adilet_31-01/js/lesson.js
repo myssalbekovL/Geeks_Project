@@ -90,50 +90,41 @@ function convertCurrency(fromCurrency) {
 
 
 //
-const block = document.querySelector('#card');
-const btnPrev = document.querySelector('#btn-prev');
-const btnNext = document.querySelector('#btn-next');
+const block = document.querySelector('.card');
+const btnPrev = document.getElementById('btn-prev');
+const btnNext = document.getElementById('btn-next');
 let count = 1;
 
-const updateCard = (data) => {
-    const existingCard = block.querySelector('#card');
-
-    if (existingCard) {
-        existingCard.querySelector('h2').textContent = data.title;
-        existingCard.querySelector('span').textContent = data.id;
-        existingCard.querySelector('h3').textContent = data.completed;
-    } else {
-        const div = document.createElement('div');
-        div.setAttribute('class', 'card');
-        div.innerHTML = `
-            <h2>${data.title}</h2>
-            <span>${data.id}</span>
-            <h3>${data.completed}</h3>
-        `;
-        block.appendChild(div);
-    }
+const createCardElement = (data) => {
+    const div = document.createElement('div');
+    div.setAttribute('class', 'cards');
+    div.innerHTML = `
+        <h2>${data.title}</h2>
+        <span>${data.id}</span>
+        <h3>${data.completed}</h3>
+    `;
+    return div;
 };
 
 const fetchData = () => {
     fetch(`https://jsonplaceholder.typicode.com/todos/${count}`)
         .then(response => response.json())
         .then(data => {
-            updateCard(data);
+            const cardElement = createCardElement(data);
+            block.innerHTML = '';
+            block.appendChild(cardElement);
         })
         .catch(error => console.error(error));
 };
+
+fetchData();
 
 btnNext.onclick = () => {
     count++;
     fetchData();
 };
 
-btnPrev.onclick = () => {
-    if (count > 1) {
-        count--;
-        fetchData();
-    }
-};
+btnPrev.onclick = () => (count > 1 ? (count--, fetchData()) : null);
 
 //запрос
 fetch('https://jsonplaceholder.typicode.com/posts')
